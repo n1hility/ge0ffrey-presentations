@@ -50,5 +50,28 @@
       <version>${version.org.openjdk.jmh}</version>
     </dependency>
   </dependencies>
-
+ <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <id>run-benchmarks</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+          </execution>
+        </executions>
+            <configuration>
+              <executable>java</executable>
+              <classpathScope>test</classpathScope>
+              <longClasspath>false</longClasspath>
+              <commandlineArgs>-Xbootclasspath/p:${project.basedir}/../fasterreflection-framework//target/fasterreflection-framework-0.1.0-SNAPSHOT.jar -classpath %classpath  org.openjdk.jmh.Main .*</commandlineArgs>
+            </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

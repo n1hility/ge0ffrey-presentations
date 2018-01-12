@@ -23,7 +23,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class MethodHandleBeanPropertyReader implements BeanPropertyReader {
-
+    
+    @java.lang.invoke.Stable
     private final MethodHandle getterMethodHandle;
 
     public MethodHandleBeanPropertyReader(Class<?> beanClass, String propertyName) {

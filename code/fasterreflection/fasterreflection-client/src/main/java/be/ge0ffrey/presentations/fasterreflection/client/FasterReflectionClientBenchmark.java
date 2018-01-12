@@ -83,9 +83,9 @@ public class FasterReflectionClientBenchmark {
 //        return (String) methodHandleFieldReader.executeGetter(person);
 //    }
 
-    @Benchmark
-    public String _300_javaCompiler() {
-        return (String) javaCompilerBeanPropertyReader.executeGetter(person);
-    }
+//    @Benchmark
+//    public String _300_javaCompiler() {
+//        return (String) javaCompilerBeanPropertyReader.executeGetter(person);
+//    }
 
 }
